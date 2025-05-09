@@ -2,15 +2,49 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>나의 포트폴리오</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    h1 { color: #333; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>나의 카페형 웹</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>안녕하세요!</h1>
-  <p>여기는 제 포트폴리오 웹사이트입니다.</p>
+
+  <!-- 1. 상단 헤더 -->
+  <header class="site-header">
+    <div class="logo">MyCafe</div>
+    <div class="search">
+      <input type="text" placeholder="검색어를 입력하세요">
+    </div>
+    <div class="user-menu">
+      <button>로그인</button>
+      <button>회원가입</button>
+    </div>
+  </header>
+
+  <!-- 2. 사이드바 + 메인 콘텐츠 감싸기 -->
+  <div class="container">
+    
+    <!-- 2-1. 사이드바 -->
+    <nav class="sidebar">
+      <ul>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+        <li>자료실</li>
+        <li>이벤트</li>
+      </ul>
+    </nav>
+
+    <!-- 2-2. 메인 콘텐츠 -->
+    <main class="content">
+      <h1>환영합니다!</h1>
+      <p>여기에 게시글 목록이나 배너 등을 넣습니다.</p>
+    </main>
+
+  </div>
+
+  <!-- 4. 푸터 -->
+  <footer class="site-footer">
+    <p>© 2025 MyCafe. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
