@@ -1,20 +1,17 @@
 /* ──────────────────────────────────────────
-   5등분 가로 그리드 설정
+   그리드 래퍼: 전체화면 기준 고정 비율 유지
 ────────────────────────────────────────── */
 .grid-wrapper {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  /* 5개의 동일 폭 컬럼 */
-  width: 100vw;
+  width: 60vw;          /* 전체 너비의 60% 만큼 고정 */
+  min-width: 60vw;      /* 창이 이보다 작아지면 줄어들지 않고 스크롤 */
+  margin: 0 auto;       /* 가로 중앙 정렬 */
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-}
-
-/* 모든 주요 영역을 2번 컬럼부터 5번 시작 전(2~4번 컬럼)까지 차지하도록 */
-.grid-wrapper > header,
-.grid-wrapper > section,
-.grid-wrapper > .container,
-.grid-wrapper > footer {
-  grid-column: 2 / 5;
+  
+  /* 창이 작아질 때 가로 스크롤 허용 */
+  overflow-x: auto;
+  overflow-y: hidden;   /* 세로는 스크롤 대신 자동 늘어나도록 */
 }
 
 /* ──────────────────────────────────────────
@@ -27,56 +24,26 @@
 }
 
 /* ──────────────────────────────────────────
-   1. 헤더 스타일
+   1. 헤더
 ────────────────────────────────────────── */
 .site-header {
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 0 20px;
   background: #2DB400;
   color: #fff;
-  /* 헤더 내부 좌우 여백 */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.site-header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.site-header .search input {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-}
-
-.site-header .user-menu button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  border: none;
-  background: #fff;
-  color: #2DB400;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 /* ──────────────────────────────────────────
-   2. Hero Banner
+   2. 배너
 ────────────────────────────────────────── */
 .hero-banner {
   position: relative;
-  width: 100%;
   height: 300px;
   background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  /* 내부 좌우 여백 */
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .hero-banner .overlay {
@@ -86,9 +53,12 @@
   z-index: 1;
 }
 
-.hero-banner .banner-image {
+.hero-banner .banner-image,
+.hero-banner .banner-content {
   position: relative;
   z-index: 2;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,26 +71,18 @@
 }
 
 .hero-banner .banner-content {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
+  flex-direction: column;
   text-align: center;
-  z-index: 2;
+  color: #fff;
 }
 
 /* ──────────────────────────────────────────
    3. 컨테이너: 사이드바 + 콘텐츠
 ────────────────────────────────────────── */
 .container {
+  flex: 1;
   display: flex;
-  padding-top: 20px;
-  /* 컨테이너 내부 좌우 여백 */
-  padding-left: 20px;
-  padding-right: 20px;
-  min-height: calc(100vh - 300px - 60px);
-  /* 전체 높이에서 배너 300px + 헤더·푸터 대략 60px 제외 */
+  padding: 20px 0;
 }
 
 .sidebar {
@@ -137,18 +99,16 @@
 
 .content {
   flex: 1;
-  padding: 20px;
+  padding: 0 20px;
   overflow-y: auto;
 }
 
 /* ──────────────────────────────────────────
-   4. 푸터 스타일
+   4. 푸터
 ────────────────────────────────────────── */
 .site-footer {
+  height: 40px;
   text-align: center;
-  padding: 20px 0;
+  line-height: 40px;
   background: #eee;
-  /* 내부 좌우 여백 */
-  padding-left: 20px;
-  padding-right: 20px;
 }
