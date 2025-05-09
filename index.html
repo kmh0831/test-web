@@ -8,55 +8,51 @@
 </head>
 <body>
 
-  <!-- 1. 상단 헤더 -->
-  <header class="site-header">
-    <div class="logo">MyCafe</div>
-    <div class="search">
-      <input type="text" placeholder="검색어를 입력하세요" />
+  <div class="grid-wrapper">
+
+    <!-- 2~4번 컬럼(가운데 3/5)만 콘텐츠를 표시합니다. -->
+    <header class="site-header">
+      <div class="logo">MyCafe</div>
+      <div class="search">
+        <input type="text" placeholder="검색어를 입력하세요" />
+      </div>
+      <div class="user-menu">
+        <button>로그인</button>
+        <button>회원가입</button>
+      </div>
+    </header>
+
+    <section class="hero-banner">
+      <div class="overlay"></div>
+      <div class="banner-image">
+        <img src="./banner.png" alt="배너 이미지" />
+      </div>
+      <div class="banner-content">
+        <h2>Welcome to MyCafe!</h2>
+        <p>여기는 원신 감성의 멋진 배너입니다.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="sidebar">
+        <ul>
+          <li>공지사항</li>
+          <li>자유게시판</li>
+          <li>자료실</li>
+          <li>이벤트</li>
+        </ul>
+      </nav>
+      <main class="content">
+        <h1>환영합니다!</h1>
+        <p>여기에 게시글 목록이나 배너 등을 넣습니다.</p>
+      </main>
     </div>
-    <div class="user-menu">
-      <button>로그인</button>
-      <button>회원가입</button>
-    </div>
-  </header>
 
-  <!-- 2. 배너 영역 (Hero Banner) -->
-  <section class="hero-banner">
-    <div class="overlay"></div>
+    <footer class="site-footer">
+      <p>© 2025 MyCafe. All rights reserved.</p>
+    </footer>
 
-    <!-- 중앙 이미지: 같은 폴더의 banner.png 참조 -->
-    <div class="banner-image">
-      <img src="./banner.jpg" alt="배너 이미지" />
-    </div>
-
-    <!-- (선택) 배너 텍스트 -->
-    <div class="banner-content">
-      <h2>Welcome to MyCafe!</h2>
-      <p>여기는 원신 감성의 멋진 배너입니다.</p>
-    </div>
-  </section>
-
-  <!-- 3. 사이드바 + 메인 콘텐츠 -->
-  <div class="container">
-    <nav class="sidebar">
-      <ul>
-        <li>공지사항</li>
-        <li>자유게시판</li>
-        <li>자료실</li>
-        <li>이벤트</li>
-      </ul>
-    </nav>
-
-    <main class="content">
-      <h1>환영합니다!</h1>
-      <p>여기에 게시글 목록이나 배너 등을 넣습니다.</p>
-    </main>
   </div>
-
-  <!-- 4. 푸터 -->
-  <footer class="site-footer">
-    <p>© 2025 MyCafe. All rights reserved.</p>
-  </footer>
 
 </body>
 </html>
