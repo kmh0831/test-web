@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>나의 카페형 웹</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MyCafe</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -12,7 +12,7 @@
   <header class="site-header">
     <div class="logo">MyCafe</div>
     <div class="search">
-      <input type="text" placeholder="검색어를 입력하세요">
+      <input type="text" placeholder="검색어를 입력하세요" />
     </div>
     <div class="user-menu">
       <button>로그인</button>
@@ -20,10 +20,22 @@
     </div>
   </header>
 
-  <!-- 2. 사이드바 + 메인 콘텐츠 감싸기 -->
+  <!-- 2. 배너 영역 (Hero Banner) -->
+  <section class="hero-banner">
+    <div class="overlay"></div>
+    <div class="banner-content">
+      <h2>Welcome to MyCafe!</h2>
+      <p>여기는 원신 감성의 멋진 배너입니다.</p>
+      <!-- 버튼 예시 
+      <a href="#" class="btn">카페 입장하기</a>
+      -->
+    </div>
+  </section>
+
+  <!-- 3. 사이드바 + 메인 콘텐츠 감싸기 -->
   <div class="container">
     
-    <!-- 2-1. 사이드바 -->
+    <!-- 3-1. 사이드바 -->
     <nav class="sidebar">
       <ul>
         <li>공지사항</li>
@@ -33,7 +45,7 @@
       </ul>
     </nav>
 
-    <!-- 2-2. 메인 콘텐츠 -->
+    <!-- 3-2. 메인 콘텐츠 -->
     <main class="content">
       <h1>환영합니다!</h1>
       <p>여기에 게시글 목록이나 배너 등을 넣습니다.</p>
