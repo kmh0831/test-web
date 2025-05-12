@@ -1,21 +1,5 @@
 /* ──────────────────────────────────────────
-   그리드 래퍼: 전체화면 기준 고정 비율 유지
-────────────────────────────────────────── */
-.grid-wrapper {
-  width: 60vw;          /* 전체 너비의 60% 만큼 고정 */
-  min-width: 60vw;      /* 창이 이보다 작아지면 줄어들지 않고 스크롤 */
-  margin: 0 auto;       /* 가로 중앙 정렬 */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  
-  /* 창이 작아질 때 가로 스크롤 허용 */
-  overflow-x: auto;
-  overflow-y: hidden;   /* 세로는 스크롤 대신 자동 늘어나도록 */
-}
-
-/* ──────────────────────────────────────────
-   공통 초기화
+   0. 공통 초기화
 ────────────────────────────────────────── */
 * {
   margin: 0;
@@ -24,24 +8,63 @@
 }
 
 /* ──────────────────────────────────────────
-   1. 헤더
+   1. 그리드 래퍼: 픽셀 고정 너비 & 스크롤
+────────────────────────────────────────── */
+.grid-wrapper {
+  /* 전체화면 1920px 기준 가운데 60% → 1152px 픽셀 고정 */
+  width: 1152px;
+  min-width: 1152px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  /* 창이 줄어들면 가로 스크롤 */
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* ──────────────────────────────────────────
+   2. 헤더 스타일
 ────────────────────────────────────────── */
 .site-header {
-  height: 60px;
+  height: 60px;               /* 고정 높이 */
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background: #2DB400;
+  background: #2DB400;        /* 네이버 초록 */
   color: #fff;
 }
 
+.site-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.site-header .search input {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+}
+
+.site-header .user-menu button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  background: #fff;
+  color: #2DB400;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /* ──────────────────────────────────────────
-   2. 배너
+   3. 히어로 배너 스타일
 ────────────────────────────────────────── */
 .hero-banner {
   position: relative;
-  height: 300px;
+  height: 300px;              /* 고정 높이 */
   background: #000;
   overflow: hidden;
 }
@@ -77,16 +100,16 @@
 }
 
 /* ──────────────────────────────────────────
-   3. 컨테이너: 사이드바 + 콘텐츠
+   4. 사이드바 + 메인 컨테이너
 ────────────────────────────────────────── */
 .container {
-  flex: 1;
+  flex: 1;                    /* 남은 공간 채우기 */
   display: flex;
   padding: 20px 0;
 }
 
 .sidebar {
-  width: 200px;
+  width: 200px;               /* 고정 너비 */
   background: #f4f4f4;
   padding: 20px;
 }
@@ -104,11 +127,11 @@
 }
 
 /* ──────────────────────────────────────────
-   4. 푸터
+   5. 푸터 스타일
 ────────────────────────────────────────── */
 .site-footer {
-  height: 40px;
-  text-align: center;
+  height: 40px;               /* 고정 높이 */
   line-height: 40px;
+  text-align: center;
   background: #eee;
 }
